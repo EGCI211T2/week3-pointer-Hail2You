@@ -6,9 +6,9 @@ using namespace std;
 
 int main(int argc,char *argv[]){
 
-int size;
-cout<<"How many numbers? ";
-cin>>size;
+int size=argc-1;
+//cout<<"How many numbers? ";
+//cin>>size;
 
 int *pa, *pb, i, temp;
 int *a =new int[size];
@@ -16,17 +16,16 @@ pa = &a[0]; //pa =a;
 
 //arr input
 for(int i=0; i<size;i++){
-  cout<<i+1<<". ";
-  cin>>*a;
+  *a=atoi(argv[i+1]);
   a++;
 }
 
 //cout<<"Original: ";
 for (i=0; i<size-1; i++ ,pa++){
-   cout<<setw(3)<<*pa ;//<<endl;
+   //cout<<setw(3)<<*pa ;//<<endl;
   //cout<<pa<<endl;
 }
-cout<<setw(3)<<*pa<<endl;
+//cout<<setw(3)<<*pa<<endl;
 
 //assigns pb to last position and reset pa to 1st position
 pb = pa;
