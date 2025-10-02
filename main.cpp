@@ -1,38 +1,55 @@
 #include <iostream>
 #include <iomanip>
-#define SIZE 10
+//#define size 10
 
 using namespace std;
 
 int main(int argc,char *argv[]){
-  int *pa, *pb, i, temp;
-int a[SIZE] ={1,2,3,4,5,6,7,8,9,10}; 
+
+int size;
+cout<<"How many numbers? ";
+cin>>size;
+
+int *pa, *pb, i, temp;
+int *a =new int[size];
 pa = &a[0]; //pa =a;
+
+//arr input
+for(int i=0; i<size;i++){
+  cout<<i+1<<". ";
+  cin>>*a;
+  a++;
+}
+
 cout<<"Original: ";
-for (i=0; i<SIZE-1; i++ ,pa++){
+for (i=0; i<size-1; i++ ,pa++){
    cout<<setw(3)<<*pa ;//<<endl;
   //cout<<pa<<endl;
 }
 cout<<setw(3)<<*pa<<endl;
 
-pa = &a[0];  
-pb = &a[SIZE-1];
-for (i=0; i<SIZE/2; i++)
+//assigns pb to last position and reset pa to 1st position
+pb = pa;
+pa -= (size-1);
+
+for (i=0; i<size/2; i++)
 {
    temp = *pa;  
    *pa = *pb;  
    *pb = temp;
    pa++;  pb--;
 }
-pa=&a[0];
-pb-=SIZE/2;
+
+//reset pa to 1st position
+pa -= size/2;
+
 cout<<"Reversed: ";
-for (i=0; i<SIZE-1; i++ ,pa++){
+for (i=0; i<size-1; i++ ,pa++){
    cout<<setw(3)<<*pa ;//<<endl;
   //cout<<pa<<endl;
 }
 cout<<setw(3)<<*pa<<endl;
 
-
+delete []a;
 return 0;
 }
