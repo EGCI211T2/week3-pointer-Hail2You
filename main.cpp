@@ -20,12 +20,12 @@ for(int i=0; i<size;i++){
   a++;
 }
 
-//cout<<"Original: ";
+cout<<"Original: ";
 for (i=0; i<size-1; i++ ,pa++){
-   //cout<<setw(3)<<*pa ;//<<endl;
+   cout<<setw(3)<<*pa ;//<<endl;
   //cout<<pa<<endl;
 }
-//cout<<setw(3)<<*pa<<endl;
+cout<<setw(3)<<*pa<<endl;
 
 //assigns pb to last position and reset pa to 1st position
 pb = pa;
@@ -42,7 +42,7 @@ for (i=0; i<size/2; i++)
 //reset pa to 1st position
 pa -= size/2;
 
-//cout<<"Reversed: ";
+cout<<"Reversed: ";
 for (i=0; i<size-1; i++ ,pa++){
    cout<<setw(3)<<*pa ;//<<endl;
   //cout<<pa<<endl;
